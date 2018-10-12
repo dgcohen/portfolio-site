@@ -1,0 +1,21 @@
+@mixin button () {
+  display: block;
+  padding: 15px 20px;
+  border: 1px solid $color-white;
+  background: $color-dim-gray;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: $color-white;
+  transition: all 500ms;
+  font-weight: 300;
+
+  @include mq($bp768) {
+    display: inline-block;
+  }
+
+  &:hover {
+    background: $color-dark-gray;
+    border: 1px solid $color-dim-gray;
+    color: $color-light-gray;
+  }
+}

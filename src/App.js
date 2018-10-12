@@ -5,16 +5,21 @@ class App extends Component {
     return (
     	<div id="main">
 	    	<header id="header">
-	      	<h1>Diego Cohen</h1>
-	      	<ul id="main-nav">
-	      		<li><a href="#about">About</a></li>
-	      		<li><a href="#projects">Projects</a></li>
-	      		<li><a href="#resume">Resume</a></li>
-	      	</ul>
+	    		<div className="header-wrapper">
+	    			<h1>Diego Cohen</h1>
+	          <div id="main-nav">
+	            <div className="hamburger"></div>
+	            <ul>
+	              <li><a href="#about">About</a></li>
+	              <li><a href="#projects">Projects</a></li>
+	              <li><a href="#resume">Resume</a></li>
+	            </ul>
+	          </div> 
+	    		</div>
 	      </header>
 	      <section id="hero">
 	      	<div className="text">
-	      		<h2>Software Engineer</h2>
+	      		<h2>Front End Software Engineer</h2>
 	      		<ul className="specialites">
 	      			<li>React</li>
 	      			<li>Node.js</li>
@@ -23,7 +28,6 @@ class App extends Component {
 	      			<li>SASS/CSS3</li>
 	      		</ul>
 	      	</div>
-	      	
 	      </section>
 	      <section id="about">
 	      	<div className="text">
@@ -32,10 +36,9 @@ class App extends Component {
 	      		 Javascript ES6, GraphQL, and SASS/CSS3.</p>
 	      		 <p>With a background in music composition and video art, I have spent the last four years as Front End Software Engineer, I've built pixel-perfect, responsive, WCAG Acessible 
 	      		 websites for clients including <a href="https://www.juilliard.edu/" target="_blank">Juilliard</a>, <a href="http://www.virginia.edu/" target="_blank">University of Virginia</a>, <a href="https://gsas.columbia.edu/" target="_blank">Columbia GSAS</a>, 
-	      		 <a href="https://www.sps.nyu.edu/" target="_blank">NYU SPS</a>, <a href="https://www.alvarezandmarsal.com/" target="_blank">Alvarez and Marsal</a>, and <a href="https://research.cornell.edu/" target="_blank">Cornell Research</a></p>
+	      		 <a href="https://www.sps.nyu.edu/" target="_blank">NYU SPS</a>, <a href="https://www.alvarezandmarsal.com/" target="_blank">Alvarez and Marsal</a>, and <a href="https://research.cornell.edu/" target="_blank">Cornell Research</a>.</p>
 	      		 <p>Recently I have immersed myself in full-stack Javascript programming, with an emphasis on React and Node.js. Please have a look at some of my personal React projects below, all the code can be found on my <a href="https://github.com/dgcohen" target="_blank">GitHub</a>.</p>
-	      		 <p>Get in touch!</p>
-	      		 <a className="contact" href="#contact">Contact Info</a>
+	      		 <a className="contact" href="#contact">Get in touch</a>
 	      	</div>
 	      	<div className="image">
 	      	</div>

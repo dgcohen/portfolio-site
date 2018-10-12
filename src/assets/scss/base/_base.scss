@@ -1,0 +1,226 @@
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $color-light-gray;
+}
+
+#main {
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  .header-wrapper {
+    width: 100%;
+    @include clearfix;
+    background: $color-dark-gray;
+    max-width: 1200px;
+    @include centered('x');
+    border-bottom: 1px solid $color-dim-gray;
+    height: 50px;
+
+    @include mq($bp768) {
+      height: 100px;
+    }
+  }
+
+  h1 {
+    color: $color-white;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    width: 70%;
+    @include centered('y');
+    left: 0;
+    margin-left: 8%;
+
+    @include mq($bp768) {
+      font-size: 36px;
+      line-height: 50px;
+      width: 40%;
+      margin-left: 50px;
+    }
+  }
+
+  #main-nav {
+    width: 30%;
+    @include centered('y');
+    right: 0;
+    margin-right: 8%;
+
+    @include mq($bp768) {
+      width: 60%;
+      height: 50px;
+      margin-right: 50px;
+    }
+
+    ul {
+      display: none;
+
+      @include mq($bp768) {
+        display: block;
+        @include centered('y');
+        right: 0;
+      }
+
+      li {
+        @include mq($bp768) {
+          float: left;
+          margin-left: 40px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+
+        a {
+          color: $color-white;
+          font-size: 20px;
+          line-height: 28px;
+          transition: color 500ms;
+
+          &:hover {
+            color: $color-dim-gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+#hero {
+  background: $color-dark-gray;
+  margin-top: 50px;
+  padding: 50px 8%;
+
+  @include mq($bp768) {
+    padding: 80px 50px;
+    margin-top: 100px;
+  }
+
+  h2 {
+    color: $color-white;
+    font-size: 32px;
+    line-height: 46px;
+
+    @include mq($bp768) {
+      font-size: 42px;
+      line-height: 56px;
+    }
+  }
+
+  .specialites {
+    color: $color-white;
+    @include clearfix;
+    padding: 20px 0;
+
+    li {
+      float: left;
+      border-right: 1px solid $color-white;
+      padding: 0 15px;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 300;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}
+
+#about {
+  background: $color-dim-gray;
+
+  @include mq($bp768) {
+    display: flex;
+  }
+
+  .text {
+    color: $color-white;
+    padding: 30px 8%;
+    @include mq($bp768) {
+      flex: 1;
+      flex-basis: 60%;
+      padding: 60px 50px;
+    }
+
+    h3 {
+      font-size: 24px;
+      line-height: 36px; 
+      margin-bottom: 20px;
+
+      @include mq($bp768) {
+        font-size: 32px;
+        line-height: 42px; 
+      }
+    }
+
+    p {
+      display: block;
+      font-size: 18px;
+      line-height: 30px; 
+      margin-bottom: 15px;
+      font-weight: 300;
+
+      a {
+        color: $color-white;
+        text-decoration: underline;
+        transition: color 500ms;
+        &:hover {
+          color: $color-light-gray;
+        }
+      }
+    }
+
+    a.contact {
+      margin-top: 20px;
+      @include button;
+    }
+  }
+  .image {
+    height: 200px;
+    width: 100%;
+    background: url('../img/diego.jpg');
+    background-size: cover;
+    background-position: 50%;
+
+    @include mq($bp768) {
+      flex: 1;
+      flex-basis: 40%;
+      height: auto;
+    }
+  }
+}
+
+#projects {
+  background: $color-light-gray;
+  padding: 20px 8%;
+
+  @include mq($bp768) {
+    padding: 30px 50px;
+  }
+}
+
+#contact {
+  background: $color-dim-gray;
+  padding: 20px 8%;
+
+  @include mq($bp768) {
+    padding: 30px 50px;
+  }
+}
