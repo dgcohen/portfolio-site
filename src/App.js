@@ -6,10 +6,10 @@ class App extends Component {
     	<div id="main">
 	    	<header id="header">
 	    		<div className="header-wrapper">
-	    			<h1>Diego Cohen</h1>
+	    			<h1 className="fade-in">Diego Cohen</h1>
 	          <div id="main-nav">
 	            <div className="hamburger"></div>
-	            <ul>
+	            <ul className="fade-in">
 	              <li><a href="#about">About</a></li>
 	              <li><a href="#projects">Projects</a></li>
 	              <li><a href="#resume">Resume</a></li>
@@ -18,9 +18,9 @@ class App extends Component {
 	    		</div>
 	      </header>
 	      <section id="hero">
-	      	<div className="text">
+	      	<div className="text fade-in">
 	      		<h2>Front End Software Engineer</h2>
-	      		<ul className="specialites">
+	      		<ul className="specialties">
 	      			<li>React</li>
 	      			<li>Node.js</li>
 	      			<li>Javascript ES6</li>
@@ -30,13 +30,12 @@ class App extends Component {
 	      	</div>
 	      </section>
 	      <section id="about">
-	      	<div className="text">
+	      	<div className="text fade-in">
 	      		<h3>About Me</h3>
 	      		<p>I'm a software engineer based in New York City specializing in React, Node.js,
 	      		 Javascript ES6, GraphQL, and SASS/CSS3.</p>
-	      		 <p>With a background in music composition and video art, I have spent the last four years as Front End Software Engineer, I've built pixel-perfect, responsive, WCAG Acessible 
-	      		 websites for clients including <a href="https://www.juilliard.edu/" target="_blank">Juilliard</a>, <a href="http://www.virginia.edu/" target="_blank">University of Virginia</a>, <a href="https://gsas.columbia.edu/" target="_blank">Columbia GSAS</a>, 
-	      		 <a href="https://www.sps.nyu.edu/" target="_blank">NYU SPS</a>, <a href="https://www.alvarezandmarsal.com/" target="_blank">Alvarez and Marsal</a>, and <a href="https://research.cornell.edu/" target="_blank">Cornell Research</a>.</p>
+	      		 <p>With a background in music composition and video art, I have spent the last four years as Front End Software Engineer, I've built pixel-perfect, responsive, WCAG Acessible
+	      		 websites for clients including <a href="https://www.juilliard.edu/" target="_blank">Juilliard</a>, <a href="http://www.virginia.edu/" target="_blank">University of Virginia</a>, <a href="https://gsas.columbia.edu/" target="_blank">Columbia GSAS</a>, <a href="https://www.sps.nyu.edu/" target="_blank">NYU SPS</a>, <a href="https://www.alvarezandmarsal.com/" target="_blank">Alvarez and Marsal</a>, and <a href="https://research.cornell.edu/" target="_blank">Cornell Research</a>.</p>
 	      		 <p>Recently I have immersed myself in full-stack Javascript programming, with an emphasis on React and Node.js. Please have a look at some of my personal React projects below, all the code can be found on my <a href="https://github.com/dgcohen" target="_blank">GitHub</a>.</p>
 	      		 <a className="contact" href="#contact">Get in touch</a>
 	      	</div>

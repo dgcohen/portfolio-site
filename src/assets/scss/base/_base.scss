@@ -12,6 +12,15 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+
+  &.faded {
+    opacity: 1;
+  }
+}
+
 #header {
   position: fixed;
   width: 100%;
@@ -43,6 +52,7 @@ body {
     @include centered('y');
     left: 0;
     margin-left: 8%;
+    transition: opacity 1s ease-in;
 
     @include mq($bp768) {
       font-size: 36px;
@@ -112,32 +122,42 @@ body {
     color: $color-white;
     font-size: 32px;
     line-height: 46px;
+    text-align: center;
 
     @include mq($bp768) {
       font-size: 42px;
       line-height: 56px;
+      text-align: left;
     }
   }
 
-  .specialites {
+  .specialties {
     color: $color-white;
     @include clearfix;
     padding: 20px 0;
 
     li {
-      float: left;
-      border-right: 1px solid $color-white;
-      padding: 0 15px;
       font-size: 18px;
       line-height: 20px;
       font-weight: 300;
+      margin-bottom: 10px;
+      display: block;
+      text-align: left;
 
-      &:first-child {
-        padding-left: 0;
-      }
+      @include mq($bp768) {
+        float: left;
+        border-right: 1px solid $color-white;
+        padding: 0 15px;
+        margin-bottom: 0;
+        text-align: left;
 
-      &:last-child {
-        border: 0;
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          border: 0;
+        }
       }
     }
   }
@@ -182,7 +202,7 @@ body {
         text-decoration: underline;
         transition: color 500ms;
         &:hover {
-          color: $color-light-gray;
+          color: $color-mid-gray;
         }
       }
     }
