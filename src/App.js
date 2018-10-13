@@ -6,10 +6,14 @@ class App extends Component {
     	<div id="main">
 	    	<header id="header">
 	    		<div className="header-wrapper">
-	    			<h1 className="fade-in">Diego Cohen</h1>
+	    			<h1>Diego Cohen</h1>
 	          <div id="main-nav">
-	            <div className="hamburger"></div>
-	            <ul className="fade-in">
+	            <div id="hamburger" aria-label="Expand main menu">
+							  <span></span>
+							  <span></span>
+							  <span></span>
+							</div>
+	            <ul aria-expanded="false" role="navigation" aria-label="Main navigation">
 	              <li><a href="#about">About</a></li>
 	              <li><a href="#projects">Projects</a></li>
 	              <li><a href="#resume">Resume</a></li>
@@ -18,19 +22,22 @@ class App extends Component {
 	    		</div>
 	      </header>
 	      <section id="hero">
-	      	<div className="text fade-in">
+	      	<div className="text">
 	      		<h2>Front End Software Engineer</h2>
-	      		<ul className="specialties">
-	      			<li>React</li>
-	      			<li>Node.js</li>
-	      			<li>Javascript ES6</li>
-	      			<li>GraphQL</li>
-	      			<li>SASS/CSS3</li>
-	      		</ul>
+	      		<div className="specialties-wrapper">
+		      		<ul className="specialties">
+		      			<li>React</li>
+		      			<li>Node.js</li>
+		      			<li>Javascript ES6</li>
+		      			<li>GraphQL</li>
+		      			<li>SASS/CSS3</li>
+		      		</ul>
+		      		<div className="image"></div>
+	      		</div>
 	      	</div>
 	      </section>
 	      <section id="about">
-	      	<div className="text fade-in">
+	      	<div className="text">
 	      		<h3>About Me</h3>
 	      		<p>I'm a software engineer based in New York City specializing in React, Node.js,
 	      		 Javascript ES6, GraphQL, and SASS/CSS3.</p>
@@ -39,8 +46,7 @@ class App extends Component {
 	      		 <p>Recently I have immersed myself in full-stack Javascript programming, with an emphasis on React and Node.js. Please have a look at some of my personal React projects below, all the code can be found on my <a href="https://github.com/dgcohen" target="_blank">GitHub</a>.</p>
 	      		 <a className="contact" href="#contact">Get in touch</a>
 	      	</div>
-	      	<div className="image">
-	      	</div>
+	      	<div className="image"></div>
 	      </section>
 	      <section id="projects">
 	      	<h3>Personal Projects</h3>

@@ -4,26 +4,31 @@ body {
   margin: 0;
   padding: 0;
   background: $color-light-gray;
+
+  &.menu-open {
+    @include mq($bp768max) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
 }
 
 #main {
   max-width: 1200px;
   margin: auto;
   font-family: 'Lato', sans-serif;
-}
+  padding-top: 50px;
+  background: $color-dark-gray;
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in;
-
-  &.faded {
-    opacity: 1;
+  @include mq($bp768) {
+    padding-top: 100px;
   }
 }
 
 #header {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -31,40 +36,44 @@ body {
   
   .header-wrapper {
     width: 100%;
+    width: calc(100% + 2px);
     @include clearfix;
     background: $color-dark-gray;
     max-width: 1200px;
     @include centered('x');
     border-bottom: 1px solid $color-dim-gray;
     height: 50px;
+    transition: 200ms height ease-in;
 
     @include mq($bp768) {
       height: 100px;
+
+      &.scrolled {
+        height: 70px;
+      }
     }
   }
 
   h1 {
     color: $color-white;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 20px;
     text-transform: uppercase;
     width: 70%;
     @include centered('y');
     left: 0;
     margin-left: 8%;
     transition: opacity 1s ease-in;
+    letter-spacing: 2px;
 
     @include mq($bp768) {
-      font-size: 36px;
-      line-height: 50px;
+      font-size: 32px;
       width: 40%;
       margin-left: 50px;
+      letter-spacing: 4px;
     }
   }
 
   #main-nav {
-    width: 30%;
-    @include centered('y');
     right: 0;
     margin-right: 8%;
 
@@ -72,21 +81,61 @@ body {
       width: 60%;
       height: 50px;
       margin-right: 50px;
+      width: 320px;
+      @include centered('y');
+    }
+
+    #hamburger {
+      @include hamburger;
+
+      @include mq($bp768) {
+        display: none;
+      }
     }
 
     ul {
       display: none;
 
+      @include mq($bp768max) {
+        position: fixed;
+        opacity: 0;
+        transition: opacity 1s;
+
+        &.open {
+          opacity: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          margin-top: 50px;
+          position: fixed;
+          z-index: 1000;
+          display: block;
+          background: $color-dark-gray;
+        }
+      }
+
       @include mq($bp768) {
         display: block;
         @include centered('y');
         right: 0;
+        position: static;
+
+        &.open {
+          width: auto;
+          padding: 0;
+        }
       }
 
       li {
+        text-align: center;
+        margin: 30px 0;
+
         @include mq($bp768) {
           float: left;
-          margin-left: 40px;
+          text-align: left;
+          margin: 0 0 0 40px;
+          line-height: 50px;
 
           &:first-child {
             margin-left: 0;
@@ -98,6 +147,7 @@ body {
           font-size: 20px;
           line-height: 28px;
           transition: color 500ms;
+          letter-spacing: 2px;
 
           &:hover {
             color: $color-dim-gray;
@@ -110,24 +160,50 @@ body {
 
 #hero {
   background: $color-dark-gray;
-  margin-top: 50px;
-  padding: 50px 8%;
+  padding: 30px 8%;
 
   @include mq($bp768) {
-    padding: 80px 50px;
-    margin-top: 100px;
+    padding: 50px;
   }
 
   h2 {
     color: $color-white;
-    font-size: 32px;
-    line-height: 46px;
+    font-size: 28px;
+    line-height: 36px;
     text-align: center;
+    letter-spacing: 2px;
 
     @include mq($bp768) {
-      font-size: 42px;
-      line-height: 56px;
+      font-size: 36px;
+      line-height: 42px;
       text-align: left;
+    }
+  }
+
+  .specialties-wrapper {
+    @include clearfix;
+    margin: 30px 0;
+
+    @include mq($bp768) {
+      margin: 10px 0;
+    }
+
+    .image {
+      background: url('../img/diego.jpg');
+      background-size: cover;
+      background-position: 50%;
+      width: 45%;
+      margin-left: 5%;
+      float: right;
+      height: 180px;
+
+      @include mq($bp580) {
+        height: 270px;
+      }
+
+      @include mq($bp768) {
+        display: none;
+      }
     }
   }
 
@@ -135,6 +211,15 @@ body {
     color: $color-white;
     @include clearfix;
     padding: 20px 0;
+    width: 45%;
+    float: left;
+    margin-right: 5%;
+
+    @include mq($bp768) {
+      margin-right: 0;
+      float: none;
+      width: 100%;
+    }
 
     li {
       font-size: 18px;
@@ -142,9 +227,10 @@ body {
       font-weight: 300;
       margin-bottom: 10px;
       display: block;
-      text-align: left;
+      text-align: center;
 
       @include mq($bp768) {
+        width: auto;
         float: left;
         border-right: 1px solid $color-white;
         padding: 0 15px;
@@ -173,16 +259,23 @@ body {
   .text {
     color: $color-white;
     padding: 30px 8%;
+    box-sizing: border-box;
+
     @include mq($bp768) {
       flex: 1;
-      flex-basis: 60%;
+      flex-basis: 50%;
       padding: 60px 50px;
+    }
+
+    @include mq($bp960) {
+      flex-basis: 60%;
     }
 
     h3 {
       font-size: 24px;
       line-height: 36px; 
       margin-bottom: 20px;
+      letter-spacing: 2px;
 
       @include mq($bp768) {
         font-size: 32px;
@@ -213,16 +306,20 @@ body {
     }
   }
   .image {
-    height: 200px;
-    width: 100%;
-    background: url('../img/diego.jpg');
-    background-size: cover;
-    background-position: 50%;
-
+    display: none;
+  
     @include mq($bp768) {
+      display: block;
       flex: 1;
-      flex-basis: 40%;
+      flex-basis: 50%;
       height: auto;
+      background: url('../img/diego.jpg');
+      background-size: cover;
+      background-position: 50%;
+    }
+
+    @include mq($bp960) {
+      width: 40%;
     }
   }
 }
