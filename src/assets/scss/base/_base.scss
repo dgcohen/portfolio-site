@@ -419,9 +419,127 @@ body {
 
 #contact {
   background: $color-dim-gray;
-  padding: 20px 8%;
+  padding: 30px 8%;
 
   @include mq($bp768) {
-    padding: 30px 50px;
+    padding: 50px 50px;
+  }
+
+  p {
+    color: $color-white;
+    font-size: 24px;
+    line-height: 36px; 
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .contact {
+    @include button;
+    margin: 30px auto;
+    width: 160px;
+    text-align: center;
+    display: block !important;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 0;
+
+    a {
+      display: block;
+      color: $color-white;
+      font-size: 16px;
+      font-weight: 300;
+      margin-right: 20px;
+      border-bottom: 1px solid $color-white;
+      padding-bottom: 3px;
+      transition: 500ms all;
+
+      &:hover {
+        color: $color-light-gray;
+        border-bottom: 1px solid $color-light-gray;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+#contact-modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  transition: opacity 1s;
+  
+  &:before {
+    content: '';
+    display: block;
+    background: $color-black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    opacity: .8;
+  }
+
+  .text {
+    z-index: 3000;
+    color: $color-white;
+    @include centered;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+
+    span {
+      display: inline-block;
+      margin-right: 30px;
+      width: 70px;
+    }
+
+    div {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      transition: color 500ms;
+  
+      &:hover {
+        cursor: pointer;
+        color: $color-mid-gray;
+      }
+    }
+  }
+
+  .close {
+    z-index: 3000;
+    color: $color-white;
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    background: transparent;
+    font-weight: 300;
+    font-size: 40px;
+    transition: color 500ms;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-mid-gray;
+    }
   }
 }

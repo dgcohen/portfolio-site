@@ -75,6 +75,18 @@ class App extends Component {
 	      <section id="contact">
 	      	<p>Want to work with me? <em>Get in touch!</em></p>
 	      	<a className="contact" href="#contact">Contact Info</a>
+
+          <div className="links">
+            <a href="#contact">GitHub</a>
+            <a href="#contact">LinkedIn</a> 
+          </div>
+          <div id="contact-modal">
+            <button className="close" aria-label="close">X</button>
+            <div className="text">
+              <div className="email"><span>email:</span><a>diego.cohen3@gmail.com</a></div>
+              <div className="phone"><span>phone:</span><a>201-921-2645</a></div>
+            </div>
+          </div>
 	      </section>
     	</div>
     );
