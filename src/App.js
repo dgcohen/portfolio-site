@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import resume from './assets/pdf/diegocohen.pdf'
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
 	            <ul aria-expanded="false" role="navigation" aria-label="Main navigation">
 	              <li><a href="#about">About</a></li>
 	              <li><a href="#projects">Projects</a></li>
-	              <li><a href="#resume">Resume</a></li>
+	              <li><a href={resume} target="_blank">Resume</a></li>
 	            </ul>
 	          </div> 
 	    		</div>
@@ -51,17 +52,23 @@ class App extends Component {
 	      <section id="projects">
 	      	<h3>Personal Projects</h3>
 	      	<ul className="projects">
-	      		<li>
-	      			<h4><a href="work-chat-app.herokapp.com">Work Chat</a></h4>
-	      			<p>A chat app based on Slack built with React, Node.js, Apollo 2, with custom SCSS styling.</p>
+            <li>
+              <a href="https://chess-react.herokuapp.com/" target="_blank"><img src={require('./assets/img/chess.jpg')} /></a>
+	      			<h4><a href="https://chess-react.herokuapp.com/" target="_blank">React Chess</a></h4>
+              <div className="links"><a href="https://chess-react.herokuapp.com/" target="_blank">Live Demo</a><a href="https://github.com/dgcohen/react-chess" target="_blank">GitHub</a></div>
+	      			<p>A single page chess app using a custom object-oriented chess engine built in React and custom SCSS.</p>
 	      		</li>
 	      		<li>
-	      			<h4><a href="https://chess-react.herokuapp.com/">React Chess</a></h4>
-	      			<p>A basic object-oriented chess app using a custom engine built in React and SCSS.</p>
+              <a href="http://asteroids-js.herokuapp.com/" target="_blank"><img src={require('./assets/img/asteroids.jpg')} /></a>
+	      			<h4><a href="http://asteroids-js.herokuapp.com/" target="_blank">Asteroids.js</a></h4>
+              <div className="links"><a href="http://asteroids-js.herokuapp.com/" target="_blank">Live Demo</a><a href="https://github.com/dgcohen/asteroids-js" target="_blank">GitHub</a></div>
+	      			<p>An asteroids game built with prototype-based OOP Javascript. HTML5 Canvas used for live-rendering.</p>
 	      		</li>
 	      		<li>
-	      			<h4><a href="http://asteroids-js.herokuapp.com/">Asteroids.js</a></h4>
-	      			<p>A game of asteroids created using object-oriented Javascript and HTML5 Canvas.</p>
+              <a href="http://callstack-exceeded.herokuapp.com" target="_blank"><img src={require('./assets/img/callstack.jpg')} /></a>
+	      			<h4><a href="http://callstack-exceeded.herokuapp.com" target="_blank">Callstack Exceeded</a></h4>
+              <div className="links"><a href="http://callstack-exceeded.herokuapp.com" target="_blank">Live Demo</a><a href="https://github.com/dgcohen/Callstack-Exceeded" target="_blank">GitHub</a></div>
+	      			<p>A question and answer app for programmers based on Stack Overflow built with Rails 4 back-end with a custom RESTful API and Javascript and Backbone.js front-end for live-updating features.</p>
 	      		</li>
 	      	</ul>
 	      </section>

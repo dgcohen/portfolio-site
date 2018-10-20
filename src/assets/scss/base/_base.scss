@@ -325,11 +325,95 @@ body {
 }
 
 #projects {
-  background: $color-light-gray;
+  background: $color-mid-light-gray;
   padding: 20px 8%;
 
   @include mq($bp768) {
     padding: 30px 50px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 36px; 
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+
+    @include mq($bp768) {
+      font-size: 32px;
+      line-height: 42px; 
+    }
+  }
+
+  .projects {
+    @include mq($bp768) {
+      display: flex;
+    }
+
+    li {
+      margin-bottom: 50px;
+
+      @include mq($bp768) {
+        padding: 20px;
+        margin-bottom: 0;
+        flex: 1;
+      }
+      
+      img {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        color: $color-black;
+        font-size: 20px;
+        line-height: 24px; 
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        
+        a {
+          color: $color-black;
+        }
+      }
+
+      .links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        a {
+          display: block;
+          color: $color-black;
+          font-size: 14px;
+          font-weight: 300;
+          margin-right: 20px;
+          border-bottom: 1px solid $color-black;
+          padding-bottom: 3px;
+          transition: 500ms all;
+
+          &:hover {
+            color: $color-dim-gray;
+            border-bottom: 1px solid $color-dim-gray;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      p {
+        color: $color-black;
+        font-size: 16px;
+        line-height: 24px; 
+        margin-bottom: 20px;
+        font-weight: 300;
+        text-align: center;
+      }
+    }
   }
 }
 
