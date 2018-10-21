@@ -73,7 +73,7 @@ class App extends Component {
 	      	</ul>
 	      </section>
 	      <section id="contact">
-	      	<p>Want to work with me? <em>Get in touch!</em></p>
+	      	<p><em>Get in touch!</em></p>
 	      	<a className="contact" href="#contact">Contact Info</a>
 
           <div className="links">
