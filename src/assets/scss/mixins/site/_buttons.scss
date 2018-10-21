@@ -1,5 +1,6 @@
 @mixin button () {
   display: block;
+  @include margin(null auto);
   padding: 15px 20px;
   border: 1px solid $color-white;
   background: $color-dim-gray;

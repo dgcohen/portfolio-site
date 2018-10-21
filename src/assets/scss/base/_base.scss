@@ -301,8 +301,15 @@ body {
     }
 
     a.contact {
-      margin-top: 20px;
       @include button;
+      margin-top: 20px;
+
+      @include mq($bp768max) {
+        margin: 40px auto 20px;
+        width: 160px;
+        text-align: center;
+        display: block !important;
+      }
     }
   }
   .image {

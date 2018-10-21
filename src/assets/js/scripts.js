@@ -7,8 +7,8 @@ $(document).ready(function() {
   var $contactButton = $('.contact');
   var $contactClose = $('#contact-modal .close');
 
-	$hamburger.on('click', function () {
-  	$menu.toggleClass('open');
+  function toggleMenu() {
+    $menu.toggleClass('open');
 
   	$(this).toggleClass('open');
 
@@ -19,7 +19,9 @@ $(document).ready(function() {
     }
 
     $('html').toggleClass('menu-open');
-  });
+  }
+
+	$hamburger.on('click', toggleMenu);
 
 	$(window).scroll(function(){
 	    var scrollPos = $(document).scrollTop();
@@ -52,6 +54,10 @@ $(document).ready(function() {
   $('a.about').on('click', function (e) {
     e.preventDefault();
 
+    if ($menu.hasClass('open')) {
+      toggleMenu();
+    }
+
     $('html, body').animate({
         scrollTop: $("#about").offset().top - 60
     }, 1000);
@@ -59,6 +65,9 @@ $(document).ready(function() {
 
   $('a.projects').on('click', function (e) {
     e.preventDefault();
+    if ($menu.hasClass('open')) {
+      toggleMenu();
+    }
 
     $('html, body').animate({
         scrollTop: $("#projects").offset().top - 60
