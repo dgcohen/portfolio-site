@@ -478,7 +478,11 @@ body {
   left: 0;
   right: 0;
   z-index: 2000;
-  transition: opacity 1s;
+  opacity: 0;
+
+  &.visible {
+    display: block;
+  }
   
   &:before {
     content: '';
@@ -506,6 +510,7 @@ body {
       display: inline-block;
       margin-right: 30px;
       width: 70px;
+      cursor: default;
     }
 
     div {
@@ -518,6 +523,7 @@ body {
 
     a {
       transition: color 500ms;
+      color: $color-white;
   
       &:hover {
         cursor: pointer;
@@ -536,6 +542,7 @@ body {
     font-weight: 300;
     font-size: 40px;
     transition: color 500ms;
+    transform: scale(1, 0.8);
 
     &:hover {
       cursor: pointer;

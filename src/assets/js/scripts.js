@@ -4,7 +4,7 @@ import $ from 'jquery';
 $(document).ready(function() {
 	var $hamburger = $('#hamburger');
   var $menu = $('#main-nav ul');
-  var $contactButton = $('#contact .contact');
+  var $contactButton = $('.contact');
   var $contactClose = $('#contact-modal .close');
 
 	$hamburger.on('click', function () {
@@ -33,11 +33,35 @@ $(document).ready(function() {
 	    }
   });
   
-  $contactButton.on('click', function () {
-    $('#contact-modal').show();
+  $contactButton.on('click', function (e) {
+    e.preventDefault();
+    $('#contact-modal').addClass('visible').animate({
+      opacity: 1,
+    }, 500);
   });
 
-  $contactClose.on('click', function () {
-    $('#contact-modal').hide(); 
+  $contactClose.on('click', function (e) {
+    e.preventDefault();
+    $('#contact-modal').animate({
+      opacity: 0,
+    }, 500, function () {
+      $(this).removeClass('visible');
+    });
+  });
+
+  $('a.about').on('click', function (e) {
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#about").offset().top - 60
+    }, 1000);
+  });
+
+  $('a.projects').on('click', function (e) {
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $("#projects").offset().top - 60
+    }, 1000);
   });
 });

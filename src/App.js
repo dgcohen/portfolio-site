@@ -15,8 +15,8 @@ class App extends Component {
 							  <span></span>
 							</div>
 	            <ul aria-expanded="false" role="navigation" aria-label="Main navigation">
-	              <li><a href="#about">About</a></li>
-	              <li><a href="#projects">Projects</a></li>
+	              <li><a href="#about" className="about">About</a></li>
+	              <li><a href="#projects" className="projects">Projects</a></li>
 	              <li><a href={resume} target="_blank" rel="noopener noreferrer">Resume</a></li>
 	            </ul>
 	          </div> 
@@ -77,14 +77,14 @@ class App extends Component {
 	      	<a className="contact" href="#contact">Contact Info</a>
 
           <div className="links">
-            <a href="#contact">GitHub</a>
-            <a href="#contact">LinkedIn</a> 
+            <a href="https://github.com/dgcohen" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/diegocohen1" target="_blank" rel="noopener noreferrer">LinkedIn</a> 
           </div>
           <div id="contact-modal">
             <button className="close" aria-label="close">X</button>
             <div className="text">
-              <div className="email"><span>email:</span><a>diego.cohen3@gmail.com</a></div>
-              <div className="phone"><span>phone:</span><a>201-921-2645</a></div>
+              <div className="email"><span>email:</span><a href="mailto:diego.cohen3@gmail.com" target="_top">diego.cohen3@gmail.com</a></div>
+              <div className="phone"><span>phone:</span><a href="tel:1-201-921-2645">(201) 921 - 2645</a></div>
             </div>
           </div>
 	      </section>
