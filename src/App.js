@@ -40,13 +40,14 @@ class App extends Component {
         </header>
         <section id="hero">
           <div className="text">
-            <h2>Front End Software Engineer</h2>
+            <h2>Software Engineer</h2>
             <div className="specialties-wrapper">
               <ul className="specialties">
                 <li>React</li>
                 <li>Node.js</li>
                 <li>Javascript ES6</li>
-                <li>GraphQL</li>
+                <li>PHP</li>
+                <li>SQL/Postgres</li>
                 <li>SASS/CSS3</li>
               </ul>
               <div className="image" />
@@ -58,13 +59,21 @@ class App extends Component {
             <h3>About Me</h3>
             <p>
               I'm a software engineer based in New York City specializing in
-              React, Node.js, Javascript ES6, GraphQL, and SASS/CSS3.
+              React, Node.js, Javascript ES6, PHP, SQL/Postgres, and SASS/CSS3.
             </p>
             <p>
               With a background in music composition and video art, I have spent
-              the last four years as Front End Software Engineer, I've built
-              pixel-perfect, responsive, WCAG Acessible websites for clients
+              the last five years as Software Engineer, building
+              pixel-perfect, responsive, and WCAG Acessible websites for clients
               including{" "}
+              <a
+                href="https://www.georgetown.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Georgetown University
+              </a>
+              ,{" "}
               <a
                 href="https://www.juilliard.edu/"
                 target="_blank"
